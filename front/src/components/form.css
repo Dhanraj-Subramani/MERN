@@ -32,9 +32,12 @@ table
 button
 {
     margin-top: 20px;
-    padding-right: 5px;
+    margin-right: 5px;
 }
-
+.rns
+{
+  color: red;
+}
 .card
 {
     background-color: rgb(185, 185, 185);

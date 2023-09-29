@@ -14,19 +14,25 @@ const userSchema = new mongoose.Schema(
     email:
     {
         type:String,
-        require:true
+        require:true,
+        unique:true
     },
     uname:
     {
         type:String,
-        require:true
+        require:true,
+        unique:true
     },
     pwd:
     {
         type:String,
         require:true
 
+    },
+    path:
+    {
+        type:String
     }
 }
 );
-module.exports = mongoose.model('cred',userSchema);
+module.exports = mongoose.model('credentials',userSchema);

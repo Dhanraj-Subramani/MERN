@@ -2,12 +2,13 @@
 import { useRef } from 'react';
 import './form.css'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
-function Login()
+import {Link,useNavigate } from 'react-router-dom' 
+function Login(props)
 {
   const uname = useRef();
   const pwd = useRef();
   let auth;
+  const nav = useNavigate()
     return(
         <>
         
@@ -50,13 +51,19 @@ function Login()
               <center>
               {/* <input type='submit'>Sign in</input> */}
               <button onClick={
-                ()=>
+                (e)=>
                 {
+                  e.preventDefault()
                   auth = {
                     uname:uname.current.value,
                     pwd:pwd.current.value
                   }
-                  axios.post("http://localhost:3500/login",auth);
+                  axios.post("http://localhost:3500/login",auth).then(data=>
+                  {
+              
+                    props.setData(data.data)
+                    nav(`../${data.data.path}`, { replace: true });
+                  });
 
                 }
               }> Sign in</button>
