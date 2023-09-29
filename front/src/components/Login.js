@@ -58,7 +58,7 @@ function Login(props)
                     uname:uname.current.value,
                     pwd:pwd.current.value
                   }
-                  axios.post("http://localhost:3500/login",auth).then(data=>
+                  axios.post("https://mern-back-weld.vercel.app/login",auth).then(data=>
                   {
               
                     props.setData(data.data)
