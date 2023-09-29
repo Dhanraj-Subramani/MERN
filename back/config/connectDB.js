@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 require('dotenv').config();
-const CONN_STR = process.env.DB_LOC
+const CONN_STR = process.env.DB_CLD
 const schema = require('./schema')
 const connect_db = async ()=>
 {
