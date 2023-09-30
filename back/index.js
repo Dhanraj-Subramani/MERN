@@ -7,7 +7,11 @@ const router = require('./routes')
 require('./config/connectDB')
 app.use(express.json())
 app.use(cors(
-    ["https://mern-front-one.vercel.app"]
+    {
+        origin: ["https://mern-front-one.vercel.app"],
+        method:["GET","POST"],
+        credentials:true
+    }
 ))
 app.use(router)
 
