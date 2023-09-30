@@ -8,6 +8,7 @@ function Login(props)
   const uname = useRef();
   const pwd = useRef();
   let auth;
+  axios.defaults.withCredentials = true;
   const nav = useNavigate()
     return(
         <>
