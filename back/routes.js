@@ -8,6 +8,10 @@ let reg = false;
 const validate = asyncHandler(async (req, res) => {
     const { uname, pwd } = await req.body
     const data = await schema.findOne({ uname })
+    if(!data)
+    {
+        console.log("invalid POST request !");
+    } 
     data.path= "dashboard"
 
     try {
